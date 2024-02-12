@@ -19,14 +19,13 @@ int factorize(char *buffer)
 		printf("%lu=%lu*%i\n", num, num / 2, 2);
 		return (0);
 	}
-	
+
 	factor = 3;
 
 	while (factor * factor <= num)
 	{
 		while (num % factor == 0)
 		{
-	
 			printf("%lu=%lu*%lu\n", num, num / factor, factor);
 			return (0);
 		}
