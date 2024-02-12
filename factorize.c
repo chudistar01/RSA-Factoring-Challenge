@@ -7,18 +7,27 @@
  */
 int factorize(char *buffer)
 {
-	u_int32_t num;
-	u_int32_t i;
+	unsigned long int num;
+	long int factor;
 
 	num = atoi(buffer);
 
-	for (i = 2; i < num; i++)
+	if (num % 2 == 0)
 	{
-		if (num % i == 0)
-		{
-			printf("%d=%d*%d\n",num,num/i,i);
-			break;
-		}
+		printf("%lu=%lu*%i\n", num, num / 2, 2);
 	}
+	factor = 3;
+
+	while (factor * factor <= num)
+	{
+		if (num % factor == 0)
+		{
+			printf("%lu=%lu*%lu\n", num, num / factor, factor);
+			return (0);
+		}
+		else
+			factor += 2;
+	}
+	printf("%lu=%lu*%i\n", num, num, 1);
 	return (0);
 }
